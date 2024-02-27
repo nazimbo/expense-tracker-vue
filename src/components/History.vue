@@ -1,15 +1,32 @@
+<script setup>
+import { ref } from "vue";
+
+const transactions = ref([
+  { id: 1, text: "Flower", amount: -20 },
+  { id: 2, text: "Salary", amount: 300 },
+  { id: 3, text: "Book", amount: -10 },
+  { id: 4, text: "Camera", amount: 150 },
+]);
+</script>
+
 <template>
   <div>
     <h2>History</h2>
     <ul>
-      <li class="plus">
+      <li v-for="transaction in transactions" :key="transaction.id" :class="transaction.amount < 0 ? 'minus' : 'plus'">
+        <div>
+          {{ transaction.text }} <span>${{ transaction.amount }}</span>
+        </div>
+        <button class="delete-btn">x</button>
+      </li>
+      <!-- <li class="plus">
         <div>Income 1 <span>$400</span></div>
         <button class="delete-btn">x</button>
       </li>
       <li class="minus">
         <div>Expense 1 <span>$1000</span></div>
         <button class="delete-btn">x</button>
-      </li>
+      </li> -->
     </ul>
   </div>
 </template>

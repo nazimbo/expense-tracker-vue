@@ -6,14 +6,14 @@
     <form>
       <div class="form-control">
         <label for="text">Text</label>
-        <input type="text" id="text" placeholder="Enter text..." />
+        <input type="text" id="text" placeholder="  Enter text..." />
       </div>
       <div class="form-control">
         <label for="amount"
           >Amount <br />
           (negative - expense, positive - income)</label
         >
-        <input type="number" id="amount" placeholder="Enter amount..." />
+        <input type="number" id="amount" placeholder="  Enter amount..." />
       </div>
       <button class="btn">Add transaction</button>
     </form>
@@ -22,23 +22,33 @@
 
 <style scoped>
 .form-control {
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 
-label {
+.form-control label {
   display: block;
   margin-bottom: 5px;
 }
 
-input {
-  padding: 10px;
+.form-control input {
+  width: 100%;
   border-radius: 5px;
+  padding: 10px 0;
   border: 1px solid #ccc;
-  outline: none;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  background-color: #2ecc71;
+}
+
+.btn:hover {
+  background-color: #27ae60;
 }
 </style>

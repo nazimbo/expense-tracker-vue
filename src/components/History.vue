@@ -19,14 +19,6 @@ const transactions = ref([
         </div>
         <button class="delete-btn">x</button>
       </li>
-      <!-- <li class="plus">
-        <div>Income 1 <span>$400</span></div>
-        <button class="delete-btn">x</button>
-      </li>
-      <li class="minus">
-        <div>Expense 1 <span>$1000</span></div>
-        <button class="delete-btn">x</button>
-      </li> -->
     </ul>
   </div>
 </template>

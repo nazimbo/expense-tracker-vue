@@ -45,4 +45,12 @@ li div {
   cursor: pointer;
   margin-right: 0;
 }
+
+.plus {
+  border-left: 5px solid #2ecc71;
+}
+
+.minus {
+  border-left: 5px solid #c0392b;
+}
 </style>

@@ -2,9 +2,14 @@
   <div>
     <h2>History</h2>
     <ul>
-      <li>Expense 1</li>
-      <li>Expense 2</li>
-      <li>Expense 3</li>
+      <li class="plus">
+        <div>Income 1 <span>$400</span></div>
+        <button class="delete-btn">x</button>
+      </li>
+      <li class="minus">
+        <div>Expense 1 <span>$1000</span></div>
+        <button class="delete-btn">x</button>
+      </li>
     </ul>
   </div>
 </template>
@@ -16,11 +21,28 @@ ul {
 }
 
 li {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #f4f4f4;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+li div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.delete-btn {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
   border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0;
 }
 </style>

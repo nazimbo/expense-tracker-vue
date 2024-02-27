@@ -6,7 +6,7 @@ import AddTransaction from "./components/AddTransaction.vue";
 </script>
 
 <template>
-  <div class="container">
+  <div>
     <h1>Expense Tracker</h1>
     <Balance />
     <IncomeExpense />
@@ -15,9 +15,4 @@ import AddTransaction from "./components/AddTransaction.vue";
   </div>
 </template>
 
-<style scoped>
-.container {
-  display: flex;
-  justify-content: space-between;
-}
-</style>
+<style scoped></style>

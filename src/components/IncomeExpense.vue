@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div>
+  <div class="container">
     <div class="income">
       <h2>Income</h2>
       <h3>$0.00</h3>
@@ -15,6 +15,11 @@
 </template>
 
 <style scoped>
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .income,
 .expense {
   width: 50%;

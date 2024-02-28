@@ -1,8 +1,8 @@
 @import "./base.css";
 
 body {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Arial", sans-serif;
 }

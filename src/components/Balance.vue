@@ -6,7 +6,7 @@ const balance = ref(0);
 
 <template>
   <div>
-    <h2>Your Balance</h2>
-    <h3>${{ balance }}</h3>
+    <h3>Your Balance</h3>
+    <h2>${{ balance }}</h2>
   </div>
 </template>

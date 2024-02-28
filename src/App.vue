@@ -1,8 +1,17 @@
 <script setup>
 import Balance from "./components/Balance.vue";
 import IncomeExpense from "./components/IncomeExpense.vue";
-import History from "./components/History.vue";
+import TransactionHistory from "./components/TransactionHistory.vue";
 import AddTransaction from "./components/AddTransaction.vue";
+
+import { ref } from "vue";
+
+const transactions = ref([
+  { id: 1, text: "Flower", amount: -20 },
+  { id: 2, text: "Salary", amount: 300 },
+  { id: 3, text: "Book", amount: -10 },
+  { id: 4, text: "Camera", amount: 150 },
+]);
 </script>
 
 <template>
@@ -10,7 +19,7 @@ import AddTransaction from "./components/AddTransaction.vue";
     <h1>Expense Tracker</h1>
     <Balance />
     <IncomeExpense />
-    <History />
+    <TransactionHistory :transactions="transactions" />
     <AddTransaction />
   </div>
 </template>

@@ -1,11 +1,29 @@
 <script setup>
 import { ref } from "vue";
+import { useToast } from "vue-toastification";
+
+const toast = useToast();
 
 const text = ref("");
 const amount = ref("");
 
+const emit = defineEmits(["add-transaction"]);
+
 const onSubmit = () => {
-  console.log(text.value, amount.value);
+  if (!text.value || !amount.value) {
+    toast.error("Please enter text and amount");
+    return;
+  }
+
+  const transactionData = {
+    text: text.value,
+    amount: parseFloat(amount.value),
+  };
+
+  emit("add-transaction", transactionData);
+
+  text.value = "";
+  amount.value = "";
 };
 </script>
 

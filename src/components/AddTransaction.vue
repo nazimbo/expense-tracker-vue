@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <h3>Add new transaction</h3>
+    <h2>Add new transaction</h2>
     <form>
       <div class="form-control">
         <label for="text">Text</label>

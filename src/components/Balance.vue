@@ -1,12 +1,17 @@
 <script setup>
-import { ref } from "vue";
+import { ref, defineProps } from "vue";
 
-const balance = ref(0);
+const props = defineProps({
+  total: {
+    type: Number,
+    required: true,
+  },
+});
 </script>
 
 <template>
   <div>
-    <h3>Your Balance</h3>
-    <h2>${{ balance }}</h2>
+    <h2>Your Balance</h2>
+    <h2>${{ total }}</h2>
   </div>
 </template>

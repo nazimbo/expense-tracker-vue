@@ -6,6 +6,10 @@ import AddTransaction from "./components/AddTransaction.vue";
 
 import { ref, computed } from "vue";
 
+import { useToast } from "vue-toastification";
+
+const toast = useToast();
+
 const transactions = ref([
   { id: 1, text: "Flower", amount: -20 },
   { id: 2, text: "Salary", amount: 300 },
@@ -24,6 +28,18 @@ const income = computed(() => {
 const expense = computed(() => {
   return transactions.value.filter((transaction) => transaction.amount < 0).reduce((acc, item) => (acc += item.amount), 0);
 });
+
+const handleAddTransaction = (transactionData) => {
+  const newTransaction = {
+    id: Math.floor(Math.random() * 100000000),
+    text: transactionData.text,
+    amount: transactionData.amount,
+  };
+
+  transactions.value.push(newTransaction);
+
+  toast.success("Transaction added successfully");
+};
 </script>
 
 <template>
@@ -32,7 +48,7 @@ const expense = computed(() => {
     <Balance :total="total" />
     <IncomeExpense :income="income" :expense="expense" />
     <TransactionHistory :transactions="transactions" />
-    <AddTransaction />
+    <AddTransaction @add-transaction="handleAddTransaction" />
   </div>
 </template>
 

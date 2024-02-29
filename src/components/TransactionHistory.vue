@@ -5,6 +5,12 @@ const props = defineProps({
     required: true,
   },
 });
+
+const emit = defineEmits(["delete-transaction"]);
+
+const deleteTransaction = (id) => {
+  emit("delete-transaction", id);
+};
 </script>
 
 <template>
@@ -15,7 +21,7 @@ const props = defineProps({
         <div>
           {{ transaction.text }} <span>${{ transaction.amount }}</span>
         </div>
-        <button class="delete-btn">x</button>
+        <button @click="deleteTransaction(transaction.id)" class="delete-btn">x</button>
       </li>
     </ul>
   </div>
